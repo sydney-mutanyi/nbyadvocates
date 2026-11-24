@@ -1,5 +1,3 @@
-# syntax=docker/dockerfile:1
-
 # ---- Stage 1: PHP dependencies ----
 FROM composer:2 AS vendor
 WORKDIR /app
@@ -34,7 +32,7 @@ WORKDIR /var/www/html
 COPY --from=vendor /app ./
 COPY --from=assets /app/public/build ./public/build
 
-RUN mkdir -p storage/framework/{cache/data,sessions,views} storage/logs bootstrap/cache \
+RUN mkdir -p storage/framework/cache/data storage/framework/sessions storage/framework/views storage/logs bootstrap/cache \
     && chown -R www-data:www-data storage bootstrap/cache
 
 COPY docker/entrypoint.sh /usr/local/bin/entrypoint.sh
