@@ -1,0 +1,26 @@
+# Dev overlay: live code mounting + Vite hot reload.
+# Usage: docker compose -f docker-compose.yml -f docker-compose.dev.yml up -d --build
+services:
+  app:
+    volumes:
+      - .:/var/www/html
+      - vendor:/var/www/html/vendor   # keep image's vendor/, not the host's
+      - bootcache:/var/www/html/bootstrap/cache   # host cache lists dev packages missing here
+
+  vite:
+    image: node:22-alpine
+    working_dir: /app
+    command: sh -c "npm ci && npm run dev -- --host 0.0.0.0"
+    ports:
+      - "5173:5173"
+    environment:
+      VITE_USE_POLLING: "true"   # file events don't cross the Windows bind mount
+      VITE_ORIGIN: "http://localhost:5173"
+    volumes:
+      - .:/app
+      - node_modules:/app/node_modules
+
+volumes:
+  vendor:
+  node_modules:
+  bootcache:
