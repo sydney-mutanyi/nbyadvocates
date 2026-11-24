@@ -398,6 +398,7 @@
                         <h3 class="text-2xl font-bold text-white">NB YASEEN</h3>
                     </div>
                     <p class="text-gray-300 text-sm leading-relaxed mb-6">Providing exceptional legal services with integrity and excellence.</p>
+                    @include('partials.social-links')
                 </div>
 
                 <!-- Quick Links -->
