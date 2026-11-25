@@ -374,6 +374,10 @@ $practiceAreas = [
                         you require. <span class="font-bold">AVOID RISK.</span> Contact or instruct us.
                         We are <span class="font-bold">DIGITAL, FAST</span> and <span class="font-bold">DILIGENT</span>.
                     </p>
+                    <div class="mt-6 pt-6 border-t border-blue-100 flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-5">
+                        <span class="text-sm font-semibold text-gray-700 uppercase tracking-wide">Reach us from anywhere &mdash; follow &amp; message us</span>
+                        @include('partials.social-links', ['variant' => 'light'])
+                    </div>
                 </div>
             </div>
         </section>
@@ -451,6 +455,15 @@ $practiceAreas = [
                                 <div>
                                     <h4 class="text-sm font-medium text-gray-500 uppercase tracking-wider mb-1">Email</h4>
                                     <a href="mailto:info@nbyadvocates.com" class="text-gray-700 hover:text-red-600 transition-colors">info@nbyadvocates.com</a>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 bg-purple-100 rounded-lg flex-shrink-0 flex items-center justify-center mr-4">
+                                    <svg class="h-6 w-6 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" /></svg>
+                                </div>
+                                <div>
+                                    <h4 class="text-sm font-medium text-gray-500 uppercase tracking-wider mb-2">Follow Us</h4>
+                                    @include('partials.social-links', ['variant' => 'light'])
                                 </div>
                             </div>
                         </div>

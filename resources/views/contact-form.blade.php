@@ -329,6 +329,10 @@
                                 <span id="btn-text">Send Message</span>
                             </button>
                             <p class="text-center text-sm text-gray-500 mt-4">We'll respond to your inquiry within the shortest time possible</p>
+                            <div class="mt-6 pt-6 border-t border-gray-100 text-center">
+                                <p class="text-sm text-gray-500 mb-3">Prefer social media? Find and message us on:</p>
+                                @include('partials.social-links', ['variant' => 'light', 'align' => 'justify-center'])
+                            </div>
                         </div>
                     </form>
                     
@@ -378,6 +382,13 @@
                             <p class="text-white/90">Monday - Friday: 8:00 AM - 5:00 PM</p>
                             <p class="text-white/90">Saturday: 9:00 AM - 1:00 PM</p>
                             <p class="text-white/90">Sunday: Closed</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <svg class="h-6 w-6 mr-4 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" /></svg>
+                        <div>
+                            <h3 class="font-semibold mb-2">Follow Us</h3>
+                            @include('partials.social-links', ['variant' => 'onred'])
                         </div>
                     </div>
                 </div>
