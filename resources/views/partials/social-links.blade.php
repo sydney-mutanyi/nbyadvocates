@@ -16,14 +16,18 @@ $styles = [
     'dark'  => 'bg-gray-800 text-gray-300 hover:bg-red-600 hover:text-white',
     'light' => 'bg-gray-100 text-gray-700 hover:bg-red-600 hover:text-white',
     'onred' => 'bg-white/20 text-white hover:bg-white hover:text-red-700',
+    'topbar' => 'bg-white/10 text-gray-200 ring-1 ring-white/10 hover:bg-red-600 hover:text-white hover:ring-red-500',
+    'frosted' => 'bg-white/20 text-white ring-1 ring-white/40 backdrop-blur-sm hover:bg-white hover:text-red-700',
 ];
 $btn = $styles[$variant ?? 'dark'] ?? $styles['dark'];
+$box = $size ?? 'w-10 h-10';
+$ico = $iconSize ?? 'w-5 h-5';
 @endphp
-<div class="flex flex-wrap items-center gap-3 {{ $align ?? '' }}" aria-label="Social media">
+<div class="flex flex-wrap items-center {{ $gap ?? 'gap-3' }} {{ $align ?? '' }}" aria-label="Social media">
     @foreach($socials as $s)
         <a href="{{ $s['url'] }}" target="_blank" rel="noopener noreferrer me" aria-label="{{ $s['label'] }}" title="{{ $s['name'] }}"
-           class="w-10 h-10 flex items-center justify-center rounded-full {{ $btn }} transition-all duration-300 transform hover:-translate-y-1">
-            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="{{ $s['path'] }}"/></svg>
+           class="{{ $box }} flex items-center justify-center rounded-full {{ $btn }} transition-all duration-300 transform hover:-translate-y-1">
+            <svg class="{{ $ico }}" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="{{ $s['path'] }}"/></svg>
         </a>
     @endforeach
 </div>

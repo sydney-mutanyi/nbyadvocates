@@ -7,6 +7,8 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="min-h-screen bg-gray-50">
+    @include('partials.top-strip')
+
     <!-- Navigation -->
     <nav class="sticky top-0 z-50 shadow-lg">
         <div class="w-full">
@@ -161,6 +163,7 @@
                     </div>
                     <a href="{{ route('contact-form') }}" class="block w-full text-left px-6 py-4 text-white hover:bg-red-700 hover:bg-opacity-50 font-semibold transition-colors duration-200 rounded-md text-lg">INSTRUCT US</a>
                     <a href="https://lawris-app.com/router" target="_blank" rel="noopener noreferrer" class="block w-full text-left px-6 py-4 text-white hover:bg-red-700 hover:bg-opacity-50 font-semibold transition-colors duration-200 rounded-md text-lg">STAFF PORTAL</a>
+                    @include('partials.mobile-social')
                 </div>
             </div>
         </div>

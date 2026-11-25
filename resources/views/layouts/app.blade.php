@@ -11,6 +11,8 @@
     @stack('styles')
 </head>
 <body class="bg-gray-100 min-h-screen">
+    @include('partials.top-strip')
+
     <!-- Navigation -->
     <nav class="sticky top-0 z-50 shadow-lg">
         <div class="w-full">
@@ -205,6 +207,7 @@
                     </div>
                     <a href="{{ route('contact-form') }}" class="block w-full text-left px-6 py-3 text-white hover:bg-red-700 hover:bg-opacity-50 font-semibold transition-colors duration-200 rounded-md text-base">INSTRUCT US</a>
                     <a href="https://lawris-app.com/router" target="_blank" rel="noopener noreferrer" class="block w-full text-left px-6 py-3 text-white hover:bg-red-700 hover:bg-opacity-50 font-semibold transition-colors duration-200 rounded-md text-base">STAFF PORTAL</a>
+                    @include('partials.mobile-social')
                 </div>
             </div>
         </div>
